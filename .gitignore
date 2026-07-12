@@ -1,0 +1,17 @@
+build/
+.vs/
+*.dll
+*.pdb
+*.exp
+*.lib
+*.obj
+*.iobj
+*.ipdb
+*.tlog/
+*.vcxproj.user
+*.suo
+__pycache__/
+*.pyc
+Thumbs.db
+.DS_Store
+key.txt

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6C7E12A1-CEA7-4C8A-A93C-8C7A0A5E7F00}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>CEMECCHA</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>CEMECCHA</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir>$(SolutionDir)build\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)build\$(Configuration)\intermediate\$(ProjectName)\</IntDir>
+    <TargetName>CEMECCHA</TargetName>
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32_LEAN_AND_MEAN;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(ProjectDir)third-party\imgui;$(ProjectDir)third-party\imgui\backends;$(ProjectDir)third-party\minhook\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ConformanceMode>true</ConformanceMode>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <SDLCheck>true</SDLCheck>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <ExceptionHandling>Async</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>d3d12.lib;dxgi.lib;$(ProjectDir)third-party\minhook\minhook.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>LIBCMTD;MSVCRTD</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\core\logger.cpp" />
+    <ClCompile Include="src\core\pattern.cpp" />
+    <ClCompile Include="src\core\globals.cpp" />
+    <ClCompile Include="src\sdk\ue_object.cpp" />
+    <ClCompile Include="src\sdk\chameleon.cpp" />
+    <ClCompile Include="src\hooks\dx12_hook.cpp" />
+    <ClCompile Include="src\hooks\game_thread.cpp" />
+    <ClCompile Include="src\features\manager.cpp" />
+    <ClCompile Include="src\features\autopainter.cpp" />
+    <ClCompile Include="src\features\camo.cpp" />
+    <ClCompile Include="src\features\runtime_triangle_cache.cpp" />
+    <ClCompile Include="src\features\esp.cpp" />
+    <ClCompile Include="src\gui\menu.cpp" />
+    <ClCompile Include="src\gui\theme.cpp" />
+    <ClCompile Include="third-party\imgui\imgui.cpp" />
+    <ClCompile Include="third-party\imgui\imgui_draw.cpp" />
+    <ClCompile Include="third-party\imgui\imgui_tables.cpp" />
+    <ClCompile Include="third-party\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="third-party\imgui\backends\imgui_impl_dx12.cpp" />
+    <ClCompile Include="third-party\imgui\backends\imgui_impl_win32.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\core\logger.hpp" />
+    <ClInclude Include="src\core\pattern.hpp" />
+    <ClInclude Include="src\core\globals.hpp" />
+    <ClInclude Include="src\sdk\ue_types.hpp" />
+    <ClInclude Include="src\sdk\ue_object.hpp" />
+    <ClInclude Include="src\sdk\chameleon.hpp" />
+    <ClInclude Include="src\hooks\dx12_hook.hpp" />
+    <ClInclude Include="src\hooks\game_thread.hpp" />
+    <ClInclude Include="src\features\feature.hpp" />
+    <ClInclude Include="src\features\manager.hpp" />
+    <ClInclude Include="src\features\autopainter.hpp" />
+    <ClInclude Include="src\features\camo.hpp" />
+    <ClInclude Include="src\gui\menu.hpp" />
+    <ClInclude Include="src\gui\theme.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>
