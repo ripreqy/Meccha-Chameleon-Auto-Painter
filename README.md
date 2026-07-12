@@ -95,16 +95,11 @@ opens on inject with the log; wait until you see
 
 - Meccha's `MecchaCamouflage` reference implementation
 - Dumper-7 for UE 5.6 property/class layouts
-- `ParzPainter` writeup for the `FUNC_NetReliable` patch on
-  `ServerPaintBatch`
 
 ## Credits
 
 - ImGui — Omar Cornut
 - MinHook — Tsuda Kageyu
-- KeyAuth removed; the DLL is unauthenticated. Add your own gate before
-  distribution if you're publishing loaders.
 
 ## License
-
 MIT — do what you want, don't blame me.
