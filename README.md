@@ -6,6 +6,9 @@ Internal cheat for **MECCHA CHAMELEON** (UE 5.6, DX12)
 > Educational / research code. Use responsibly — running third-party
 > software against a live multiplayer service is against most games'
 
+Discord : https://discord.gg/code-engine
+Website : https://code-engine.dev
+
 ## Features
 
 ### Auto Painter
