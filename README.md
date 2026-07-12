@@ -1,8 +1,6 @@
 # CEMECCHA
 
-Internal cheat DLL for **MECCHA CHAMELEON** (UE 5.6, DX12). Ports the
-chameleon Auto Painter from Meccha's reference implementation with an ESP
-overlay on top.
+Internal cheat for **MECCHA CHAMELEON** (UE 5.6, DX12)
 
 > Educational / research code. Use responsibly — running third-party
 > software against a live multiplayer service is against most games'
@@ -11,7 +9,7 @@ overlay on top.
 ## Features
 
 ### Auto Painter
-- 1:1 chameleon camouflage — samples the environment behind the character
+- chameleon camouflage — samples the environment behind the character
   via a spawned `ASceneCapture2D` at `SCS_BaseColor`, projects each runtime
   triangle onto that render target, and paints the sampled pixel via
   `URuntimePaintableComponent::PaintAtUVWithBrush`.
