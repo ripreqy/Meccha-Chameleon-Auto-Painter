@@ -91,7 +91,6 @@ opens on inject with the log; wait until you see
 
 ## Reference
 
-- Meccha's `MecchaCamouflage` reference implementation
 - Dumper-7 for UE 5.6 property/class layouts
 
 ## Credits
