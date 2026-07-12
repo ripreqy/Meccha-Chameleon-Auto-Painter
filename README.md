@@ -2,9 +2,9 @@
 
 Internal cheat for **MECCHA CHAMELEON** (UE 5.6, DX12)
 
+> The game is just really boring, and I'm not really in the mood to do anything for it, tbh
 > Educational / research code. Use responsibly — running third-party
 > software against a live multiplayer service is against most games'
-> Terms of Service and may result in an account ban.
 
 ## Features
 
